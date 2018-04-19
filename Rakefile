@@ -17,7 +17,7 @@ end
 
 task :clean_up_image do
   go_dependency_label = get_var('GO_DEPENDENCY_LABEL_UPSTREAM')
-  sh("docker rmi -f #{username}/artifact_demo:#{go_dependency_label}")
+  sh("docker rmi -f #{username}/artifact_demo:#{go_dependency_label} || true")
 end
 
 task :create_json do
