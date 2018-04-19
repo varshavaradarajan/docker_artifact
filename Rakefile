@@ -9,9 +9,9 @@ def get_var(name)
 end
 
 username = get_var('DOCKERHUB_USERNAME')
+go_pipeline_label = get_var('GO_PIPELINE_LABEL')
 
 task :create_docker_image do
-  go_pipeline_label = get_var('GO_PIPELINE_LABEL')
   sh("docker build . -t #{username}/artifact_demo:#{go_pipeline_label}")
 end
 
